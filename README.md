@@ -1,1 +1,1 @@
-# Acretion-based-Intelligence-ABI-
+# Dynamic Heterogeneous Agent Network (DHAN)
