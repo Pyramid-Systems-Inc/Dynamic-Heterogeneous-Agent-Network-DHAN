@@ -1,7 +1,3 @@
-Of course. A detailed roadmap is essential for turning the design document into a real project. This roadmap breaks down the MVP development into clear, sequential phases, steps, and tasks. It assumes a small team (or a single developer) and prioritizes proving the core concept above all else.
-
----
-
 ### **MVP Development Roadmap: Project Myriad (or Neutrino)**
 
 **Project Goal:** To build a functional prototype that validates the core architecture of orchestrating multiple, minimalist, specialized AI agents to answer a query.
@@ -75,28 +71,48 @@ Of course. A detailed roadmap is essential for turning the design document into 
 *   **Step 3.1: Build the Input Parser**
     *   **Task 3.1.1:** Create the `InputParser` module (`parser.py`).
     *   **Task 3.1.2:** Implement the simple keyword-extraction logic based on the MVP's target query.
-    *   **Task 3.1.3:** Write unit tests for the parser (e.g., `test_parser("...lightbulb and factories...")` should return `['lightbulb', 'factories']`).
-    *   **Task 3.1.4:** Integrate the parser into the main `orchestrator.py` script. The system can now take the raw query string as input.
+    *   **Task 3.1.3:** Write unit tests for the parser.
+    *   **Task 3.1.4:** Integrate the parser into the main `orchestrator.py` script.
 
 *   **Step 3.2: Build the Output Synthesizer**
     *   **Task 3.2.1:** Create the `OutputSynthesizer` module (`synthesizer.py`).
-    *   **Task 3.2.2:** Implement the simple, rule-based logic for combining the data from the `Lightbulb_AI` and `Factory_AI` into a single sentence.
+    *   **Task 3.2.2:** Implement the simple, rule-based logic for combining the data.
     *   **Task 3.2.3:** The function should take a list of JSON objects (the agent responses) and return a final string.
-    *   **Task 3.2.4:** Write unit tests for the synthesizer to ensure it correctly combines the expected inputs.
+    *   **Task 3.2.4:** Write unit tests for the synthesizer.
 
 *   **Step 3.3: Final Assembly and End-to-End Test**
     *   **Task 3.3.1:** In the `Orchestrator`, after collecting the agent responses, pass them to the `OutputSynthesizer`.
     *   **Task 3.3.2:** The final output of the `Orchestrator` should now be the human-readable sentence.
     *   **Task 3.3.3:** Create a `main.py` entry point that allows a user to run the entire system from one command.
-    *   **Task 3.3.4:** Perform a full, end-to-end test: run the two agent containers, then run `main.py` with the target query, and verify the final output is correct.
+    *   **Task 3.3.4:** Perform a full, end-to-end test.
     *   **Task 3.3.5:** Write a comprehensive `README.md` file explaining how to set up and run the MVP.
 
-**Phase 3 Deliverable:** A fully functional MVP prototype. When executed, it takes the target query as input and produces the correct, synthesized sentence as output, with all components working in concert.
+**Phase 3 Deliverable:** A fully functional MVP prototype that takes the target query as input and produces the correct, synthesized sentence as output.
 
 ---
 
-**Post-MVP (Phase 4 and Beyond):**
+### **Post-MVP: The Path to Deeper Biomimicry**
 
-*   **Step 4.1: Refactor & Harden:** Clean up code, improve error handling, and add more robust testing.
-*   **Step 4.2: Demonstrate Ambiguity:** Implement the "drive" example with an `Ambiguity_Resolution_AI` as the next proof-of-concept.
-*   **Step 4.3: Explore Dynamic Instantiation:** Begin research and development on a "factory for factories"—an AI that can create and register a new agent on the fly.
+Once the core architectural pattern is validated, development will shift towards evolving the system to more closely mirror the brain's parallel, decentralized, and adaptive nature, as outlined in the Architectural Blueprint.
+
+**Phase 4: Enhancing Performance and Intelligence**
+*   **Goal:** Improve system speed and begin implementing more dynamic learning mechanisms.
+*   **Step 4.1: Asynchronous Communication:** Rearchitect the Orchestrator to use `asyncio` and `aiohttp`, allowing it to query all agents in parallel instead of sequentially. This is a critical step for scalability.
+*   **Step 4.2: Implement Synaptic Strengthening:** For every successful query, log the co-activation of agents. Use this data to implement a basic weighting system that prioritizes frequently-used agent pairings.
+*   **Step 4.3: Demonstrate Ambiguity Resolution:** Implement the "drive" example from the design document, creating an `Ambiguity_Resolution_AI` to prove the system can handle more complex inputs.
+
+**Phase 5: Decentralization and Dynamic Growth**
+*   **Goal:** Reduce the Orchestrator's role as a central hub and implement true "neurogenesis."
+*   **Step 5.1: Agent-to-Agent Communication:** Enable agents to call other relevant agents directly, creating "reflex arcs" that bypass the central Orchestrator for common, localized tasks.
+*   **Step 5.2: Implement the Lifecycle Manager:** Build the "factory for factories"—an AI module that can be triggered to:
+    *   Instantiate a new, blank agent container.
+    *   Assign it a network address.
+    *   Perform a basic web scrape to populate it with foundational knowledge.
+    *   Register the new agent with the Orchestrator.
+*   **Step 5.3: Prove Neurogenesis:** Demonstrate the system's ability to learn a novel concept by asking it a query for which no agent exists, and verifying that a new agent is created and can answer a basic follow-up question.
+
+**Phase 6: Transition to an Advanced State**
+*   **Goal:** Evolve the system's core components into a truly advanced, graph-based cognitive architecture.
+*   **Step 6.1: Event-Driven Architecture:** Begin migrating from a direct-call model to a message broker (e.g., RabbitMQ). Components will now publish and subscribe to event streams, fully decoupling them.
+*   **Step 6.2: Implement the Digital Connectome:** Replace the simple `AI_REGISTRY` with a graph database (e.g., Neo4j). Agents become nodes, and their learned relationships (from Synaptic Strengthening) become weighted edges. Orchestration now becomes a graph traversal algorithm.
+*   **Step 6.3: Agent Fine-Tuning:** Introduce the first Type-C/D agents (e.g., a simple `Sentiment_AI`) and build a feedback mechanism that allows user input to trigger a micro-training loop on that specific agent, enabling continuous, targeted learning.
